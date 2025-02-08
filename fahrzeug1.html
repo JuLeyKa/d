@@ -284,9 +284,13 @@
       document.getElementById('bigImage').src = newSrc;
     }
 
+    // Toggle Menu-Funktion für mobile Geräte
+    function toggleMenu() {
+      document.querySelector('nav').classList.toggle('active');
+    }
+
     // Klick auf das Hauptbild öffnet ein Modal mit vergrößertem Bild
     document.getElementById('bigImage').addEventListener('click', function() {
-      // Erstelle das Modal-Overlay
       var modal = document.createElement('div');
       modal.style.position = 'fixed';
       modal.style.top = '0';
@@ -298,12 +302,10 @@
       modal.style.alignItems = 'center';
       modal.style.justifyContent = 'center';
       modal.style.zIndex = '1000';
-      // Klick auf das Overlay schließt das Modal
       modal.addEventListener('click', function() {
         modal.remove();
       });
 
-      // Erstelle das vergrößerte Bild
       var enlargedImg = document.createElement('img');
       enlargedImg.src = document.getElementById('bigImage').src;
       enlargedImg.style.maxWidth = '100%';
