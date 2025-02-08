@@ -19,13 +19,9 @@
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <span id="memberMenuContainer"></span>
         </ul>
       </nav>
-      <div class="termin">
-        <a href="login.html" class="termin-button">
-          <span class="calendar-icon">📅</span> Terminvereinbarung
-        </a>
-      </div>
     </div>
   </header>
 
@@ -49,8 +45,18 @@
         <div class="registration-form">
           <h2>Registrierung</h2>
           <form id="registerForm">
+            <label for="registerName">Name:</label>
+            <input type="text" id="registerName" required>
+            
+            <label for="registerAddress">Adresse:</label>
+            <input type="text" id="registerAddress" required>
+            
+            <label for="registerPhone">Telefon:</label>
+            <input type="tel" id="registerPhone" required>
+            
             <label for="registerEmail">E-Mail:</label>
             <input type="email" id="registerEmail" required>
+            
             <label for="registerPassword">Passwort:</label>
             <input type="password" id="registerPassword" required>
             <button type="submit">Registrieren</button>
@@ -67,14 +73,24 @@
     </div>
   </footer>
 
+  <!-- Skripte -->
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
+  <script type="module" src="js/member-header.js"></script>
+  <!-- Formular zurücksetzen, damit alte Eingaben nicht bleiben -->
+  <script>
+    window.addEventListener("load", function() {
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      if (loginForm) loginForm.reset();
+      if (registerForm) registerForm.reset();
+    });
+  </script>
   <!-- Firebase Authentifizierung -->
   <script type="module">
-    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    import { auth } from "./js/firebase-config.js";
+    import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
     
-    const auth = getAuth();
-
     // Login-Formular
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (e) => {
@@ -83,7 +99,6 @@
       const password = document.getElementById('loginPassword').value;
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Login erfolgreich
           window.location.href = "member.html";
         })
         .catch((error) => {
@@ -95,11 +110,17 @@
     const registerForm = document.getElementById('registerForm');
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const address = document.getElementById('registerAddress').value;
+      const phone = document.getElementById('registerPhone').value;
       const email = document.getElementById('registerEmail').value;
       const password = document.getElementById('registerPassword').value;
+      
+      // Hier wird nur die Authentifizierung durchgeführt.
+      // Zusätzliche persönliche Daten (Name, Adresse, Telefon) müssten idealerweise in einer Datenbank (z.B. Firestore) gespeichert werden.
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Registrierung erfolgreich
+          // Optionale Speicherung zusätzlicher Daten (z.B. in Firestore) kann hier ergänzt werden.
           window.location.href = "member.html";
         })
         .catch((error) => {
@@ -109,17 +130,17 @@
   </script>
   <script type="text/javascript">
     (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '679f87050cacc3ebde036d21' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-        v.type = "text/javascript";
-        s.parentNode.insertBefore(v, s);
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '679f87050cacc3ebde036d21' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
 </body>

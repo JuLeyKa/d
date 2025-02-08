@@ -19,13 +19,9 @@
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="kontakt.html" class="active">Kontakt</a></li>
+          <span id="memberMenuContainer"></span>
         </ul>
       </nav>
-      <div class="termin">
-        <a href="login.html" class="termin-button">
-          <span class="calendar-icon">📅</span> Terminvereinbarung
-        </a>
-      </div>
     </div>
   </header>
 
@@ -56,21 +52,23 @@
     </div>
   </footer>
 
+  <!-- Skripte -->
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
+  <script type="module" src="js/member-header.js"></script>
   <script type="text/javascript">
     (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '679f87050cacc3ebde036d21' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-        v.type = "text/javascript";
-        s.parentNode.insertBefore(v, s);
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '679f87050cacc3ebde036d21' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
 </body>
