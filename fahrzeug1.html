@@ -38,35 +38,35 @@
     <div class="detail-container">
       <!-- Zurück-Link -->
       <div class="go-back">
-        <a href="gebrauchtwagen.html">&larr; Zurück zu den Suchergebnissen</a>
+        <a href="gebrauchtwagen.html">&larr; Zurück zu den Angeboten</a>
       </div>
 
-      <!-- Block 1: Slider (Bilder) und Händlerinfos -->
+      <!-- Block 1: Slider (Bilder) und Fahrzeuginfos -->
       <div class="top-section">
         <!-- Slider-Bereich -->
         <div class="slider-area">
           <div class="main-image">
-            <img id="bigImage" src="images/Tiguan all1.png" alt="Hauptbild Volkswagen Tiguan Allspace">
+            <img id="bigImage" src="images/Tiguan all1.png" alt="Volkswagen Tiguan Allspace">
           </div>
           <div class="thumbnails">
-            <img src="images/Tiguan all1.png" alt="Thumb 1" onclick="changeImage(this.src)">
-            <img src="images/Tiguanall2.png" alt="Thumb 2" onclick="changeImage(this.src)">
-            <img src="images/Tiguanall3.png" alt="Thumb 3" onclick="changeImage(this.src)">
+            <img src="images/Tiguan all1.png" alt="Bild 1" onclick="changeImage(this.src)">
+            <img src="images/Tiguanall2.png" alt="Bild 2" onclick="changeImage(this.src)">
+            <img src="images/Tiguanall3.png" alt="Bild 3" onclick="changeImage(this.src)">
           </div>
-          <p><a href="#">Alle Bilder</a> | <a href="#">Vergrößern</a></p>
-          <h3>Kompetent und zuverlässig – wir sind für Sie da.</h3>
+          <p><a href="#">Alle Bilder anzeigen</a> | <a href="#">Bild vergrößern</a></p>
+          <h3>Modernste Technik trifft elegantes Design</h3>
         </div>
 
-        <!-- Händler-Infos -->
+        <!-- Fahrzeuginformationen -->
         <div class="info-area">
-          <h2>Volkswagen Tiguan Allspace – 2.0 TSI 4Motion<br>
-              (LED, Virtual Cockpit, Head-up-Display, 7 Sitze)</h2>
+          <h2>Volkswagen Tiguan Allspace – 2.0 TSI 4Motion</h2>
+          <p><strong>Features:</strong> LED, Virtual Cockpit, Head-up-Display, 7 Sitze</p>
           <div class="price">32.100 €</div>
           <div class="stars">★★★★★</div>
           <p>Nils Autowerkstatt Göppingen</p>
           <div class="dealer-contact">
             <p>Tel.: +49 (0)561 123456</p>
-            <p><a href="kontakt.html" class="email-link">E-Mail schreiben</a></p>
+            <p><a href="kontakt.html" class="email-link">Jetzt Kontakt aufnehmen</a></p>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
         <table class="tech-table">
           <tr>
             <td class="label">Fahrzeugzustand</td>
-            <td>Gebrauchtfahrzeug, Unfallfrei</td>
+            <td>Gebraucht, unfallfrei</td>
           </tr>
           <tr>
             <td class="label">Fahrzeugnummer</td>
@@ -147,15 +147,15 @@
             <td>Verbrennungsmotor</td>
           </tr>
           <tr>
-            <td class="label">Kraftstoffart</td>
+            <td class="label">Kraftstoff</td>
             <td>Benzin</td>
           </tr>
           <tr>
-            <td class="label">Anzahl Sitzplätze</td>
+            <td class="label">Sitzplätze</td>
             <td>7</td>
           </tr>
           <tr>
-            <td class="label">Anzahl der Türen</td>
+            <td class="label">Türen</td>
             <td>4/5</td>
           </tr>
           <tr>
@@ -184,11 +184,11 @@
           </tr>
           <tr>
             <td class="label">Einparkhilfe</td>
-            <td>Vorne, Hinten</td>
+            <td>Vorne & hinten</td>
           </tr>
           <tr>
             <td class="label">Airbags</td>
-            <td>Front-, Seiten- und weitere Airbags</td>
+            <td>Front, Seiten & weitere</td>
           </tr>
           <tr>
             <td class="label">Farbe</td>
@@ -226,13 +226,13 @@
 
       <!-- Block 5: Fahrzeugbeschreibung -->
       <div class="description-block">
-        <h2>Fahrzeugbeschreibung laut Anbieter</h2>
+        <h2>Fahrzeugbeschreibung</h2>
+        <p>Erleben Sie modernste Technik, exquisites Design und innovativen Fahrkomfort. Jedes Detail wurde präzise verarbeitet, um Ihnen ein unvergleichliches Fahrerlebnis zu bieten.</p>
         <ul>
           <li>Ambientebeleuchtung</li>
           <li>Bluetooth Audio-Streaming</li>
           <li>Digitaler Tacho</li>
           <li>Digitales Radio</li>
-          <li>Fahrlautglich</li>
           <li>Komplett-Fahrzeug</li>
           <li>LED Matrix Licht</li>
           <li>Optik-Paket</li>
@@ -281,17 +281,14 @@
     })(document, 'script');
   </script>
   <script>
-    // Funktion, um das Hauptbild zu wechseln
     function changeImage(newSrc) {
       document.getElementById('bigImage').src = newSrc;
     }
 
-    // Toggle Menu-Funktion für mobile Geräte
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
     }
 
-    // Klick auf das Hauptbild öffnet ein Modal mit vergrößertem Bild
     document.getElementById('bigImage').addEventListener('click', function() {
       var modal = document.createElement('div');
       modal.style.position = 'fixed';
