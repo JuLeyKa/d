@@ -3,153 +3,175 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-  }
-  body {
+}
+body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: #fff; /* Kein Vollflächen-Hintergrundbild für das ganze Body */
+    background: #fff;
     color: #333;
-  }
-  
-  /* Container */
-  .container {
+}
+
+/* Container */
+.container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-  }
-  
-  /* Header */
-  header {
-    background: #222;
-    color: #fff;
-    padding: 10px 0;
-  }
-  header .container {
+}
+
+/* --------------------------- */
+/* Header (angepasst für alle Seiten) */
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  .logo a {
+    padding: 10px 0;
+    background: #222;
+}
+.logo a {
     color: #fff;
     font-size: 1.5em;
     text-decoration: none;
-  }
-  nav ul {
+}
+.nav-menu {
     list-style: none;
     display: flex;
-  }
-  nav ul li {
+    margin: 0;
+    padding: 0;
+}
+.nav-menu li {
     margin: 0 10px;
-  }
-  nav ul li a {
+}
+.nav-menu li a {
     color: #fff;
     text-decoration: none;
     padding: 5px 10px;
-  }
-  nav ul li a.active,
-  nav ul li a:hover {
+}
+.nav-menu li a.active,
+.nav-menu li a:hover {
     background: #555;
     border-radius: 5px;
-  }
-  
-  /* Hero-Bereich */
-  .hero {
+}
+
+/* Hamburger – nur auf mobilen Geräten sichtbar */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    position: relative;
+}
+.hamburger span {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+/* --------------------------- */
+/* Hero-Bereich */
+.hero {
     position: relative;
     width: 100%;
-    height: 70vh; /* Höhe anpassen, wie gewünscht */
-    /* Verschiebt den Bildausschnitt nach unten (center 20%) */
+    height: 70vh;
     background: url('../images/nils.png') no-repeat center 20%;
     background-size: cover;
-    background-attachment: fixed; /* optional, Parallax-Effekt */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     text-align: center;
-  }
-  .hero::after {
+}
+.hero::after {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* dunkler Overlay für bessere Lesbarkeit */
-  }
-  .hero-content {
-    position: relative; /* damit das Kind über dem Overlay liegt */
+    background: rgba(0,0,0,0.4);
+}
+.hero-content {
+    position: relative;
     z-index: 1;
     max-width: 800px;
     padding: 20px;
-  }
-  .hero-content h1 {
+}
+.hero-content h1 {
     font-size: 3em;
     margin-bottom: 10px;
-  }
-  .hero-content p {
+}
+.hero-content p {
     font-size: 1.2em;
-  }
-  
-  /* Slider Section */
-  .slider {
+}
+
+/* --------------------------- */
+/* Slider Section */
+.slider {
     position: relative;
     background: #ddd;
     padding: 20px 0;
     margin-bottom: 20px;
-  }
-  .offer-slider {
+}
+.offer-slider {
     position: relative;
     width: 60%;
     margin: auto;
     overflow: hidden;
-  }
-  .offer-slider .slide {
+}
+.offer-slider .slide {
     display: none;
     text-align: center;
     padding: 40px 20px;
     font-size: 2em;
     font-weight: bold;
     transition: opacity 0.5s ease-in-out;
-  }
-  .offer-slider .slide.active {
+}
+.offer-slider .slide.active {
     display: block;
     opacity: 1;
-  }
-  .vibrate {
+}
+.vibrate {
     animation: vibrate 0.5s;
-  }
-  @keyframes vibrate {
+}
+@keyframes vibrate {
     0% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
     40% { transform: translate(-2px, -2px); }
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
     100% { transform: translate(0); }
-  }
-  
-  /* Contact Icons */
-  .contact-icons {
+}
+
+/* --------------------------- */
+/* Contact Icons */
+.contact-icons {
     position: absolute;
     top: 20px;
     right: 20px;
     display: flex;
     flex-direction: column;
-  }
-  .icon-item {
+}
+.icon-item {
     position: relative;
     margin-bottom: 10px;
     cursor: pointer;
-  }
-  .icon {
+}
+.icon {
     font-size: 1.5em;
     background: #fff;
     padding: 10px;
     border-radius: 50%;
     transition: transform 0.3s;
-  }
-  .icon-item:hover .icon {
+}
+.icon-item:hover .icon {
     transform: scale(1.2);
-  }
-  .icon-item .info {
+}
+.icon-item .info {
     position: absolute;
     right: 110%;
     top: 50%;
@@ -162,70 +184,335 @@ html, body {
     white-space: nowrap;
     transition: opacity 0.3s;
     pointer-events: none;
-  }
-  .icon-item:hover .info {
+}
+.icon-item:hover .info {
     opacity: 1;
-  }
-  
-  /* Content Section */
-  .content {
+}
+
+/* --------------------------- */
+/* Content Section */
+.content {
     background: #fff;
     padding: 20px 0;
     margin-bottom: 20px;
-    flex: 1; /* damit der Content-Bereich flexibler ist */
-  }
-  .content h2 {
+    /* Damit dieser Bereich als flex-Item wächst */
+    /* Falls du keinen <main> verwendest, kannst du auch .content flex: 1; setzen */
+}
+.content h2 {
     margin-bottom: 10px;
-  }
-  .content p {
+}
+.content p {
     margin-bottom: 10px;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* --------------------------- */
+/* Footer */
+footer {
     background: #222;
     color: #fff;
     padding: 10px 0;
     text-align: center;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    header .container {
-      flex-direction: column;
-      text-align: center;
+}
+
+/* --------------------------- */
+/* Fahrzeug-Liste (Gebrauchtwagenbörse) */
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.car-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.car-item:hover {
+    transform: scale(1.05);
+}
+.car-item img {
+    width: 100%;
+    display: block;
+}
+
+/* --------------------------- */
+/* Detailseite (Fahrzeugdetails) */
+.detail-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 1rem;
+}
+.go-back {
+    margin-bottom: 10px;
+}
+.go-back a {
+    text-decoration: none;
+    color: #007bff;
+}
+.go-back a:hover {
+    text-decoration: underline;
+}
+.top-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.slider-area {
+    flex: 1 1 600px;
+    min-width: 300px;
+}
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.thumbnails {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.thumbnails img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+.thumbnails img:hover {
+    border-color: #007bff;
+}
+.info-area {
+    flex: 1 1 300px;
+    min-width: 280px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+.info-area h2 {
+    margin-top: 0;
+}
+.info-area .price {
+    font-size: 1.5rem;
+    color: #e67e22;
+    margin: 10px 0;
+}
+.info-area .finance {
+    margin-bottom: 20px;
+}
+.stars {
+    color: #f1c40f;
+}
+.dealer-contact p {
+    margin: 5px 0;
+}
+.dealer-actions button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dealer-actions button:hover {
+    background: #0056b3;
+}
+
+/* --------------------------- */
+/* Kurze Eckdaten */
+.short-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #2c2c2c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    margin: 10px;
+}
+.spec-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.spec-label {
+    font-weight: bold;
+}
+.extra-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.extra-tag {
+    background: #ff9900;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* --------------------------- */
+/* Technische Daten */
+.technical-data {
+    margin-bottom: 20px;
+}
+.technical-data h2 {
+    margin-bottom: 10px;
+}
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.tech-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+.tech-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+.tech-table td.label {
+    font-weight: bold;
+    width: 200px;
+    color: #555;
+}
+
+/* --------------------------- */
+/* Ausstattung */
+.equipment {
+    margin-bottom: 20px;
+}
+.equipment h2 {
+    margin-bottom: 10px;
+}
+.equip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.equip-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 0;
+    font-size: 0.95rem;
+}
+.check-icon {
+    color: #27ae60;
+}
+
+/* --------------------------- */
+/* Fahrzeugbeschreibung */
+.description-block {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.description-block h2 {
+    margin-top: 0;
+}
+.toggle-section {
+    display: none;
+    margin-top: 10px;
+}
+.show-toggle {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* --------------------------- */
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    /* Header: Menü ausblenden, Hamburger anzeigen */
+    .nav-menu {
+        display: none;
     }
-    nav ul {
-      flex-direction: column;
-      margin-top: 10px;
+    .hamburger {
+        display: block;
     }
-    .offer-slider {
-      width: 90%;
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
     }
-    .contact-icons {
-      flex-direction: row;
-      position: static;
-      margin-top: 10px;
-      justify-content: center;
+    /* Nach dem Klick wird das Menü als Block angezeigt */
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        background: #222;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
     }
-    .icon-item {
-      margin: 0 5px;
+    nav.active ul li {
+        margin: 10px 0;
+        text-align: center;
     }
-    .icon-item .info {
-      position: absolute;
-      top: 110%;
-      right: 0;
-      transform: translateY(0);
-    }
+    /* Anpassung Hero */
     .hero {
-      height: 50vh; /* An Handy-Bildschirme anpassen */
-      background-attachment: scroll; /* Falls 'fixed' auf Handy nicht gut aussieht */
+        height: 50vh;
+        background-attachment: scroll;
     }
     .hero-content h1 {
-      font-size: 2em;
+        font-size: 2em;
     }
     .hero-content p {
-      font-size: 1em;
+        font-size: 1em;
     }
-  }
-  
+    /* Top-Section (Detailseite) als Spalte */
+    .top-section {
+        flex-direction: column;
+    }
+    .short-specs {
+        flex-direction: column;
+    }
+}
+
+/* --------------------------- */
+/* Footer immer am unteren Rand platzieren */
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Falls du kein <main> verwendest, kannst du alternativ auch folgendes verwenden:
+   footer {
+      margin-top: auto;
+   }
+*/

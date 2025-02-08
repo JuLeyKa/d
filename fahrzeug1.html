@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volkswagen Tiguan Allspace | Fahrzeugdetails</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">Nils Autowerkstatt</a>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
+          <span id="memberMenuContainer"></span>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="detail-container">
+      <!-- Zurück-Link -->
+      <div class="go-back">
+        <a href="gebrauchtwagen.html">&larr; Zurück zu den Suchergebnissen</a>
+      </div>
+
+      <!-- Block 1: Slider (Bilder) und Händlerinfos -->
+      <div class="top-section">
+        <!-- Slider-Bereich -->
+        <div class="slider-area">
+          <div class="main-image">
+            <img id="bigImage" src="images/Tiguan all1.png" alt="Hauptbild Volkswagen Tiguan Allspace">
+          </div>
+          <div class="thumbnails">
+            <img src="images/Tiguan all1.png" alt="Thumb 1" onclick="changeImage(this.src)">
+            <img src="images/Tiguanall2.png" alt="Thumb 2" onclick="changeImage(this.src)">
+            <img src="images/Tiguanall3.png" alt="Thumb 3" onclick="changeImage(this.src)">
+          </div>
+          <p><a href="#">Alle Bilder</a> | <a href="#">Vergrößern</a></p>
+          <h3>Kompetent und zuverlässig – wir sind für Sie da.</h3>
+        </div>
+
+        <!-- Händler-Infos -->
+        <div class="info-area">
+          <h2>Volkswagen Tiguan Allspace – 2.0 TSI 4Motion<br>
+              (LED, Virtual Cockpit, Head-up-Display, 7 Sitze)</h2>
+          <div class="price">32.100 €</div>
+          <div class="stars">★★★★★</div>
+          <p>Nils Autowerkstatt Göppingen</p>
+          <div class="dealer-contact">
+            <p>Tel.: +49 (0)561 123456</p>
+            <p><a href="kontakt.html" class="email-link">E-Mail schreiben</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: Kurze Eckdaten -->
+      <div class="short-specs">
+        <div class="spec-item">
+          <div class="icon">🚗</div>
+          <div class="spec-label">Kilometerstand:</div>
+          <div class="spec-value">84.747 km</div>
+        </div>
+        <div class="spec-item">
+          <div class="icon">⚡</div>
+          <div class="spec-label">Leistung:</div>
+          <div class="spec-value">140 kW (190 PS)</div>
+        </div>
+        <div class="spec-item">
+          <div class="icon">⛽</div>
+          <div class="spec-label">Kraftstoff:</div>
+          <div class="spec-value">Benzin</div>
+        </div>
+        <div class="spec-item">
+          <div class="icon">⚙️</div>
+          <div class="spec-label">Getriebe:</div>
+          <div class="spec-value">Automatik</div>
+        </div>
+        <div class="spec-item">
+          <div class="icon">📅</div>
+          <div class="spec-label">Erstzulassung:</div>
+          <div class="spec-value">06/2022</div>
+        </div>
+        <div class="spec-item">
+          <div class="icon">👤</div>
+          <div class="spec-label">Sitzplätze:</div>
+          <div class="spec-value">7</div>
+        </div>
+        <div class="extra-tags">
+          <span class="extra-tag">Händlereigene Garantie</span>
+          <span class="extra-tag">Euro6d</span>
+          <span class="extra-tag">Virtual Cockpit</span>
+        </div>
+      </div>
+
+      <!-- Block 3: Technische Daten -->
+      <div class="technical-data">
+        <h2>Technische Daten</h2>
+        <table class="tech-table">
+          <tr>
+            <td class="label">Fahrzeugzustand</td>
+            <td>Gebrauchtfahrzeug, Unfallfrei</td>
+          </tr>
+          <tr>
+            <td class="label">Fahrzeugnummer</td>
+            <td>24279</td>
+          </tr>
+          <tr>
+            <td class="label">Kategorie</td>
+            <td>SUV / Geländewagen / Pickup</td>
+          </tr>
+          <tr>
+            <td class="label">Herkunft</td>
+            <td>Deutsche Ausführung</td>
+          </tr>
+          <tr>
+            <td class="label">Kilometerstand</td>
+            <td>84.747 km</td>
+          </tr>
+          <tr>
+            <td class="label">Hubraum</td>
+            <td>1.984 cm³</td>
+          </tr>
+          <tr>
+            <td class="label">Leistung</td>
+            <td>140 kW (190 PS)</td>
+          </tr>
+          <tr>
+            <td class="label">Antriebsart</td>
+            <td>Verbrennungsmotor</td>
+          </tr>
+          <tr>
+            <td class="label">Kraftstoffart</td>
+            <td>Benzin</td>
+          </tr>
+          <tr>
+            <td class="label">Anzahl Sitzplätze</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td class="label">Anzahl der Türen</td>
+            <td>4/5</td>
+          </tr>
+          <tr>
+            <td class="label">Getriebe</td>
+            <td>Automatik</td>
+          </tr>
+          <tr>
+            <td class="label">Schadstoffklasse</td>
+            <td>Euro6d</td>
+          </tr>
+          <tr>
+            <td class="label">Umweltplakette</td>
+            <td>4 (Grün)</td>
+          </tr>
+          <tr>
+            <td class="label">Erstzulassung</td>
+            <td>06/2022</td>
+          </tr>
+          <tr>
+            <td class="label">HU</td>
+            <td>Neu</td>
+          </tr>
+          <tr>
+            <td class="label">Klimatisierung</td>
+            <td>Klimaautomatik</td>
+          </tr>
+          <tr>
+            <td class="label">Einparkhilfe</td>
+            <td>Vorne, Hinten</td>
+          </tr>
+          <tr>
+            <td class="label">Airbags</td>
+            <td>Front-, Seiten- und weitere Airbags</td>
+          </tr>
+          <tr>
+            <td class="label">Farbe</td>
+            <td>Grau Metallic</td>
+          </tr>
+          <tr>
+            <td class="label">Innenausstattung</td>
+            <td>Stoff, Schwarz</td>
+          </tr>
+          <tr>
+            <td class="label">Zylinder</td>
+            <td>4</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Block 4: Ausstattung -->
+      <div class="equipment">
+        <h2>Ausstattung</h2>
+        <div class="equip-grid">
+          <div class="equip-item"><span class="check-icon">✔</span> Abgedunkelte Scheiben</div>
+          <div class="equip-item"><span class="check-icon">✔</span> ABS</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Abstandstempomat</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Abstandswarner</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Alarmanlage</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Allradantrieb</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Ambiente-Beleuchtung</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Android Auto</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Apple CarPlay</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Armlehne</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Berganfahrassistent</div>
+          <div class="equip-item"><span class="check-icon">✔</span> Bi-Xenon Scheinwerfer</div>
+        </div>
+      </div>
+
+      <!-- Block 5: Fahrzeugbeschreibung -->
+      <div class="description-block">
+        <h2>Fahrzeugbeschreibung laut Anbieter</h2>
+        <ul>
+          <li>Ambientebeleuchtung</li>
+          <li>Bluetooth Audio-Streaming</li>
+          <li>Digitaler Tacho</li>
+          <li>Digitales Radio</li>
+          <li>Fahrlautglich</li>
+          <li>Komplett-Fahrzeug</li>
+          <li>LED Matrix Licht</li>
+          <li>Optik-Paket</li>
+          <li>Radiovorbereitung</li>
+          <li>Rückfahrwarner</li>
+          <li>Scheckheft</li>
+          <li>Sprachsteuerung</li>
+          <li>Technik-Paket</li>
+          <li>Verkehrszeichenassistent</li>
+          <li>Verkehrszeichenerkennung</li>
+          <li>Euro6d</li>
+          <li>Händlereigene Garantie</li>
+          <li>Elektronische Dämpfer Control</li>
+          <li>Niveauregulierung</li>
+          <li>Spurhalteassistent</li>
+          <li>Spurwechselassistent</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <!-- Skripte -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/member-header.js"></script>
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '679f87050cacc3ebde036d21' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+  <script>
+    // Funktion, um das Hauptbild zu wechseln
+    function changeImage(newSrc) {
+      document.getElementById('bigImage').src = newSrc;
+    }
+
+    // Klick auf das Hauptbild öffnet ein Modal mit vergrößertem Bild
+    document.getElementById('bigImage').addEventListener('click', function() {
+      // Erstelle das Modal-Overlay
+      var modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.zIndex = '1000';
+      // Klick auf das Overlay schließt das Modal
+      modal.addEventListener('click', function() {
+        modal.remove();
+      });
+
+      // Erstelle das vergrößerte Bild
+      var enlargedImg = document.createElement('img');
+      enlargedImg.src = document.getElementById('bigImage').src;
+      enlargedImg.style.maxWidth = '100%';
+      enlargedImg.style.maxHeight = '100%';
+      enlargedImg.style.width = 'auto';
+      enlargedImg.style.height = 'auto';
+      enlargedImg.style.border = '5px solid #fff';
+      enlargedImg.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
+
+      modal.appendChild(enlargedImg);
+      document.body.appendChild(modal);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gebrauchtwagenbörse</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Einheitlicher Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">Nils Autowerkstatt</a>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="gebrauchtwagen.html" class="active">Gebrauchtwagenbörse</a></li>
+          <span id="memberMenuContainer"></span>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section class="content container">
+      <h1>Unsere Gebrauchtwagen</h1>
+      <p>Stöbern Sie in unseren aktuellen Angeboten. Bei Interesse einfach anklicken, um alle Details zu sehen.</p>
+    </section>
+
+    <!-- Fahrzeugübersicht -->
+    <section class="car-list container">
+      <!-- Fahrzeug 1: VW Tiguan Allspace -->
+      <div class="car-item">
+        <a href="fahrzeug1.html">
+          <!-- Hier verwenden wir als Hauptbild z.B. das erste Bild des Tiguan -->
+          <img src="images/Tiguan all1.png" alt="Volkswagen Tiguan Allspace">
+          <h3>Volkswagen Tiguan Allspace</h3>
+          <p>Kilometerstand: 84.747 km</p>
+          <p>Preis: 32.100 €</p>
+        </a>
+      </div>
+      <!-- Weitere Fahrzeuge als Platzhalter -->
+      <div class="car-item">
+        <a href="#">
+          <img src="images/car1.png" alt="Fahrzeug 2 (Platzhalter)">
+          <h3>Fahrzeug 2 (Platzhalter)</h3>
+          <p>Kilometerstand: 85.000 km</p>
+          <p>Preis: 8.999 €</p>
+        </a>
+      </div>
+      <div class="car-item">
+        <a href="#">
+          <img src="images/car1.png" alt="Fahrzeug 3 (Platzhalter)">
+          <h3>Fahrzeug 3 (Platzhalter)</h3>
+          <p>Kilometerstand: 64.500 km</p>
+          <p>Preis: 12.499 €</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+  
+  <!-- Skripte -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/member-header.js"></script>
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '679f87050cacc3ebde036d21' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>

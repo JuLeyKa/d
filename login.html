@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Einheitlicher Header -->
   <header>
-    <div class="container">
+    <div class="container header-container">
       <div class="logo">
         <a href="index.html">Nils Autowerkstatt</a>
       </div>
       <nav>
-        <ul>
+        <ul class="nav-menu">
           <li><a href="index.html">Startseite</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
           <span id="memberMenuContainer"></span>
         </ul>
       </nav>
@@ -72,12 +73,10 @@
       <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-
-  <!-- Skripte -->
+  
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
   <script type="module" src="js/member-header.js"></script>
-  <!-- Formular zurücksetzen, damit alte Eingaben nicht bleiben -->
   <script>
     window.addEventListener("load", function() {
       const loginForm = document.getElementById('loginForm');
@@ -86,12 +85,10 @@
       if (registerForm) registerForm.reset();
     });
   </script>
-  <!-- Firebase Authentifizierung -->
   <script type="module">
     import { auth } from "./js/firebase-config.js";
     import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
     
-    // Login-Formular
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -106,7 +103,6 @@
         });
     });
 
-    // Registrierungs-Formular
     const registerForm = document.getElementById('registerForm');
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -116,11 +112,8 @@
       const email = document.getElementById('registerEmail').value;
       const password = document.getElementById('registerPassword').value;
       
-      // Hier wird nur die Authentifizierung durchgeführt.
-      // Zusätzliche persönliche Daten (Name, Adresse, Telefon) müssten idealerweise in einer Datenbank (z.B. Firestore) gespeichert werden.
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Optionale Speicherung zusätzlicher Daten (z.B. in Firestore) kann hier ergänzt werden.
           window.location.href = "member.html";
         })
         .catch((error) => {

@@ -7,25 +7,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Einheitlicher Header -->
   <header>
-    <div class="container">
+    <div class="container header-container">
       <div class="logo">
         <a href="index.html">Nils Autowerkstatt</a>
       </div>
       <nav>
-        <ul>
+        <ul class="nav-menu">
           <li><a href="index.html" class="active">Startseite</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
           <span id="memberMenuContainer"></span>
         </ul>
       </nav>
+      <!-- Hamburger (wird in kleinen Viewports sichtbar) -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   
-  <!-- Hero-Bereich mit Nils als Hintergrundbild -->
+  <!-- Hero-Bereich -->
   <section class="hero">
     <div class="hero-content">
       <h1>Willkommen bei Nils Autowerkstatt</h1>
@@ -62,25 +69,26 @@
     </div>
   </section>
   
-  <!-- Haupt-Content -->
+  <!-- Hauptinhalt -->
   <main>
     <section class="content container">
       <h2>Unsere Leistungen</h2>
-      <p>Hier könnte z. B. ein kurzer Einleitungstext über Leistungen etc. rein.</p>
+      <p>Hier könnte z. B. ein kurzer Einleitungstext über Leistungen etc. rein.</p>
     </section>
   </main>
-
+  
   <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-
+  
   <!-- Skripte -->
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
   <script type="module" src="js/member-header.js"></script>
+  <!-- Voiceflow Chatbot (immer geladen) -->
   <script type="text/javascript">
     (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
