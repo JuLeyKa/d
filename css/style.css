@@ -28,6 +28,8 @@ body {
     justify-content: space-between;
     padding: 10px 0;
     background: #222;
+    /* Neuer moderner Font für Header */
+    font-family: 'Montserrat', sans-serif;
 }
 .logo a {
     color: #fff;
@@ -196,8 +198,6 @@ body {
     background: #fff;
     padding: 20px 0;
     margin-bottom: 20px;
-    /* Damit dieser Bereich als flex-Item wächst */
-    /* Falls du keinen <main> verwendest, kannst du auch .content flex: 1; setzen */
 }
 .content h2 {
     margin-bottom: 10px;
@@ -213,6 +213,8 @@ footer {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    /* Neuer moderner Font für Footer */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* --------------------------- */
@@ -512,9 +514,3 @@ body {
 .content {
   flex: 1;
 }
-
-/* Falls du kein <main> verwendest, kannst du alternativ auch folgendes verwenden:
-   footer {
-      margin-top: auto;
-   }
-*/
