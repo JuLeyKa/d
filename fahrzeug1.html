@@ -117,7 +117,6 @@
             <img src="images/Tiguanall2.png" alt="Bild 2" onclick="changeImage(this.src)">
             <img src="images/Tiguanall3.png" alt="Bild 3" onclick="changeImage(this.src)">
           </div>
-          <!-- Entfernt: Link-Leiste "Alle Bilder anzeigen | Bild vergrößern" -->
           <h3>Modernste Technik trifft elegantes Design</h3>
         </div>
 
@@ -351,11 +350,10 @@
     function changeImage(newSrc) {
       document.getElementById('bigImage').src = newSrc;
     }
-
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
     }
-
+    // Modal mit Swipe-Unterstützung
     document.getElementById('bigImage').addEventListener('click', function() {
       var modal = document.createElement('div');
       modal.style.position = 'fixed';
@@ -368,12 +366,16 @@
       modal.style.alignItems = 'center';
       modal.style.justifyContent = 'center';
       modal.style.zIndex = '1000';
-      modal.addEventListener('click', function() {
-        modal.remove();
-      });
+
+      // Hole alle Bilder aus den Thumbnails
+      var thumbnails = document.querySelectorAll('.thumbnails img');
+      var images = Array.from(thumbnails).map(function(img) { return img.src; });
+      var currentImage = document.getElementById('bigImage').src;
+      var currentIndex = images.indexOf(currentImage);
+      if (currentIndex < 0) currentIndex = 0;
 
       var enlargedImg = document.createElement('img');
-      enlargedImg.src = document.getElementById('bigImage').src;
+      enlargedImg.src = currentImage;
       enlargedImg.style.maxWidth = '100%';
       enlargedImg.style.maxHeight = '100%';
       enlargedImg.style.width = 'auto';
@@ -383,6 +385,41 @@
 
       modal.appendChild(enlargedImg);
       document.body.appendChild(modal);
+
+      var startX = 0;
+      var isSwipe = false;
+
+      modal.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+      });
+
+      modal.addEventListener('touchmove', function(e) {
+        var touchX = e.touches[0].clientX;
+        var diff = touchX - startX;
+        if (Math.abs(diff) > 30) {
+          isSwipe = true;
+        }
+      });
+
+      modal.addEventListener('touchend', function(e) {
+        var endX = e.changedTouches[0].clientX;
+        var diff = endX - startX;
+        if (Math.abs(diff) > 50) {
+          if (diff < 0) {
+            currentIndex = (currentIndex + 1) % images.length;
+          } else {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+          }
+          enlargedImg.src = images[currentIndex];
+        } else if (!isSwipe) {
+          modal.remove();
+        }
+        isSwipe = false;
+      });
+
+      modal.addEventListener('click', function() {
+        modal.remove();
+      });
     });
   </script>
 </body>
