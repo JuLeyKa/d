@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nils Autowerkstatt - Login / Registrierung</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Nils Autowerkstatt</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="termin">
+        <a href="login.html" class="termin-button">
+          <span class="calendar-icon">📅</span> Terminvereinbarung
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth-Bereich -->
+  <section class="content">
+    <div class="container">
+      <h1>Login / Registrierung</h1>
+      <div class="auth-forms">
+        <!-- Login-Formular -->
+        <div class="login-form">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <label for="loginEmail">E-Mail:</label>
+            <input type="email" id="loginEmail" required>
+            <label for="loginPassword">Passwort:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+        <!-- Registrierungs-Formular -->
+        <div class="registration-form">
+          <h2>Registrierung</h2>
+          <form id="registerForm">
+            <label for="registerEmail">E-Mail:</label>
+            <input type="email" id="registerEmail" required>
+            <label for="registerPassword">Passwort:</label>
+            <input type="password" id="registerPassword" required>
+            <button type="submit">Registrieren</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Firebase Authentifizierung -->
+  <script type="module">
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    
+    const auth = getAuth();
+
+    // Login-Formular
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Login erfolgreich
+          window.location.href = "member.html";
+        })
+        .catch((error) => {
+          alert("Login Fehler: " + error.message);
+        });
+    });
+
+    // Registrierungs-Formular
+    const registerForm = document.getElementById('registerForm');
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Registrierung erfolgreich
+          window.location.href = "member.html";
+        })
+        .catch((error) => {
+          alert("Registrierungs Fehler: " + error.message);
+        });
+    });
+  </script>
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '679f87050cacc3ebde036d21' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
