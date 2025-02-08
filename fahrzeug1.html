@@ -62,6 +62,14 @@
       font-size: 0.9rem;
       margin: 0 5px;
     }
+    @media (max-width: 768px) {
+      .spec-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -109,7 +117,7 @@
             <img src="images/Tiguanall2.png" alt="Bild 2" onclick="changeImage(this.src)">
             <img src="images/Tiguanall3.png" alt="Bild 3" onclick="changeImage(this.src)">
           </div>
-          <p><a href="#">Alle Bilder anzeigen</a> | <a href="#">Bild vergrößern</a></p>
+          <!-- Entfernt: Link-Leiste "Alle Bilder anzeigen | Bild vergrößern" -->
           <h3>Modernste Technik trifft elegantes Design</h3>
         </div>
 
