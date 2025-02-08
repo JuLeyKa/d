@@ -1,0 +1,4 @@
+[build]
+  publish = "."
+  # Falls du einen Build-Prozess hast, z. B.:
+  # command = "npm run build"
