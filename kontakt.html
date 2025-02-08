@@ -9,26 +9,28 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Einheitlicher Header -->
+  <!-- Vollflächiger Header -->
   <header>
-    <div class="container header-container">
-      <div class="logo">
-        <a href="index.html">Nils Autowerkstatt</a>
-      </div>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Startseite</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="kontakt.html" class="active">Kontakt</a></li>
-          <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
-          <span id="memberMenuContainer"></span>
-        </ul>
-      </nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="header-bg" style="background-color: #222; width: 100%;">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Nils Autowerkstatt</a>
+        </div>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
+            <span id="memberMenuContainer"></span>
+          </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
@@ -59,7 +61,7 @@
       <p>&copy; 2025 Nils Autowerkstatt. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-
+  
   <!-- Skripte -->
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
