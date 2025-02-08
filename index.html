@@ -7,12 +7,29 @@
   <!-- Google Fonts: Montserrat für einen modernen Look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Inline-Styles zur Größenanpassung des Hero-Bereichs und Sliders -->
   <style>
-    /* Auf mobilen Geräten: Slider-Höhe reduzieren und Kontakt-Icons ausblenden */
+    /* Reduzierter Hero-Bereich */
+    .hero {
+      height: 40vh;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+    /* Slider-Höhe festlegen */
+    .slider {
+      height: 30vh;
+      padding: 10px 0;
+    }
+    .offer-slider .slide {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+    /* Auf mobilen Geräten: Kontakt-Icons ausblenden */
     @media (max-width: 768px) {
-      .slider {
-        height: 40vh;
-      }
       .contact-icons {
         display: none;
       }
@@ -20,34 +37,36 @@
   </style>
 </head>
 <body>
-  <!-- Einheitlicher Header -->
+  <!-- Vollflächiger Header-Hintergrund -->
   <header>
-    <div class="container header-container">
-      <div class="logo">
-        <a href="index.html">Nils Autowerkstatt</a>
-      </div>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active">Startseite</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
-          <span id="memberMenuContainer"></span>
-        </ul>
-      </nav>
-      <!-- Hamburger (sichtbar in kleinen Viewports) -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="header-bg" style="background-color: #222; width: 100%;">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Nils Autowerkstatt</a>
+        </div>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="active">Startseite</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="gebrauchtwagen.html">Gebrauchtwagenbörse</a></li>
+            <span id="memberMenuContainer"></span>
+          </ul>
+        </nav>
+        <!-- Hamburger (sichtbar in kleinen Viewports) -->
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
   
   <!-- Hero-Bereich -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content container">
       <h1>Ihr Partner für erstklassigen Fahrzeugservice</h1>
       <p>Erleben Sie innovative Technik und persönlichen Service – wir machen Ihren Fahrzeugalltag einfacher und komfortabler.</p>
     </div>
@@ -55,7 +74,7 @@
 
   <!-- Slider Section -->
   <section class="slider">
-    <div class="offer-slider">
+    <div class="offer-slider container">
       <div class="slide active">
         <h2>Ölwechsel – schon ab 49€</h2>
       </div>
@@ -66,7 +85,7 @@
         <h2>Inspektion ab 199€</h2>
       </div>
     </div>
-    <div class="contact-icons">
+    <div class="contact-icons container">
       <div class="icon-item">
         <div class="icon">📞</div>
         <div class="info">Telefon: 0123-456789</div>
@@ -86,7 +105,7 @@
   <main>
     <section class="content container">
       <h2>Unsere Leistungen</h2>
-      <p>Entdecken Sie unser umfassendes Serviceangebot, das von Routinewartungen bis zu spezialisierten Reparaturen reicht – alles, um Ihr Fahrzeug in Bestform zu halten.</p>
+      <p>Entdecken Sie unser umfassendes Serviceangebot – von Routinewartungen bis zu spezialisierten Reparaturen, damit Ihr Fahrzeug stets in Bestform bleibt.</p>
     </section>
   </main>
   

@@ -9,7 +9,7 @@
   <!-- Font Awesome für moderne Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-HHsOC6+8lBvZsH7L07+BdNPzG4fT05CVghOJxN4nOcm/Wte8+O8YqWnQu9rvnjQbIhwTxWTXcTktyhA3vFZ4AQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
-  <!-- Zusätzliche Inline-CSS-Regeln für den modernen Short-Specs-Block -->
+  <!-- Inline-Styles für den Short-Specs-Block (wie zuvor) -->
   <style>
     .short-specs {
       background: #f5f5f5;
@@ -293,7 +293,7 @@
       <!-- Block 5: Fahrzeugbeschreibung -->
       <div class="description-block">
         <h2>Fahrzeugbeschreibung</h2>
-        <p>Erleben Sie modernste Technik, exquisites Design und innovativen Fahrkomfort. Jedes Detail wurde präzise verarbeitet, um Ihnen ein unvergleichliches Fahrerlebnis zu bieten.</p>
+        <p>Erleben Sie modernste Technik, exquisites Design und innovativen Fahrkomfort – jedes Detail wurde präzise verarbeitet, um Ihnen ein unvergleichliches Fahrerlebnis zu bieten.</p>
         <ul>
           <li>Ambientebeleuchtung</li>
           <li>Bluetooth Audio-Streaming</li>
@@ -350,10 +350,12 @@
     function changeImage(newSrc) {
       document.getElementById('bigImage').src = newSrc;
     }
+
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
     }
-    // Modal mit Swipe-Unterstützung
+
+    // Modal mit Swipe- und Tap-Unterstützung für das Bild
     document.getElementById('bigImage').addEventListener('click', function() {
       var modal = document.createElement('div');
       modal.style.position = 'fixed';
@@ -366,6 +368,21 @@
       modal.style.alignItems = 'center';
       modal.style.justifyContent = 'center';
       modal.style.zIndex = '1000';
+
+      // Close-Button hinzufügen
+      var closeButton = document.createElement('div');
+      closeButton.innerHTML = '&times;';
+      closeButton.style.position = 'absolute';
+      closeButton.style.top = '20px';
+      closeButton.style.right = '20px';
+      closeButton.style.fontSize = '2rem';
+      closeButton.style.color = '#fff';
+      closeButton.style.cursor = 'pointer';
+      modal.appendChild(closeButton);
+      closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        modal.remove();
+      });
 
       // Hole alle Bilder aus den Thumbnails
       var thumbnails = document.querySelectorAll('.thumbnails img');
@@ -382,10 +399,11 @@
       enlargedImg.style.height = 'auto';
       enlargedImg.style.border = '5px solid #fff';
       enlargedImg.style.boxShadow = '0 0 10px rgba(0,0,0,0.5)';
-
       modal.appendChild(enlargedImg);
+
       document.body.appendChild(modal);
 
+      // Funktionen für Swipe und Tap
       var startX = 0;
       var isSwipe = false;
 
@@ -411,14 +429,17 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
           }
           enlargedImg.src = images[currentIndex];
-        } else if (!isSwipe) {
-          modal.remove();
         }
         isSwipe = false;
       });
 
-      modal.addEventListener('click', function() {
-        modal.remove();
+      // Bei Klick (auch auf Desktop) zum nächsten Bild wechseln (Tap)
+      modal.addEventListener('click', function(e) {
+        // Falls der Klick nicht auf den Close-Button erfolgt ist
+        if (e.target !== closeButton && !isSwipe) {
+          currentIndex = (currentIndex + 1) % images.length;
+          enlargedImg.src = images[currentIndex];
+        }
       });
     });
   </script>
