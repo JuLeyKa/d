@@ -88,7 +88,6 @@
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/main.js"></script>
   <script type="module" src="js/member-header.js"></script>
-  <!-- Voiceflow Chatbot (immer geladen) -->
   <script type="text/javascript">
     (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -103,6 +102,12 @@
       v.type = "text/javascript";
       s.parentNode.insertBefore(v, s);
     })(document, 'script');
+  </script>
+  <script>
+    // Toggle Menu-Funktion für mobile Geräte
+    function toggleMenu() {
+      document.querySelector('nav').classList.toggle('active');
+    }
   </script>
 </body>
 </html>

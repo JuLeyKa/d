@@ -61,6 +61,7 @@ body {
     width: 25px;
     height: 20px;
     position: relative;
+    z-index: 1001; /* sorgt dafür, dass der Hamburger immer anklickbar bleibt */
 }
 .hamburger span {
     background: #fff;
@@ -470,6 +471,7 @@ footer {
         top: 60px;
         left: 0;
         padding: 0;
+        z-index: 1000;
     }
     nav.active ul li {
         margin: 10px 0;
